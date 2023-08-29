@@ -1,5 +1,4 @@
 import { createContext, useContext, useState } from "react";
-import { Cart } from "../pages/Cart";
 
 const CartContext = createContext();
 
