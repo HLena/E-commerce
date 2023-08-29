@@ -1,39 +1,56 @@
-import { useState } from 'react';
-import { Container, Nav, Navbar as NavbarBS, NavDropdown} from "react-bootstrap";
+import { Container, Nav, Navbar as NavbarBS, Image } from "react-bootstrap";
 import { CartWidget } from './CartWidget';
+import { NavLink } from 'react-router-dom';
+import logoWhite from '../assets/images/logo-white.png';
+import logoBlack from '../assets/images/logo-black.png';
 
+import '../assets/styles/navbar.css';
 
 export const Navbar = () => {
 
-  const [cartQuantity, setCartQuantity] = useState(1);
-
   return (
 
-    <NavbarBS bg="dark" data-bs-theme="dark">
+    <NavbarBS  collapseOnSelect sticky="top" bg="white" data-bs-theme="white" expand = 'lg' className="bg-body-tertiary">
       <Container>
-        <NavbarBS.Brand href="#home">4everStore</NavbarBS.Brand>
-        <Nav className="me-auto">
-          <NavDropdown title="Categorías" id="navbarScrollingDropdown">
-            <NavDropdown.Item href="#action3">Ropa Mujer</NavDropdown.Item>
-            <NavDropdown.Divider />
-            <NavDropdown.Item href="#action4">Ropa Hombre</NavDropdown.Item>
-            <NavDropdown.Divider />
+        <div className="d-flex align-items-center navbar-brand__container">
+            <NavbarBS.Toggle aria-controls="responsive-navbar-nav" />
+            <NavbarBS.Brand href="/">
+                <Image src = {logoBlack} style={{ width: '100px'}}/>
+            </NavbarBS.Brand>
+            <div className="cart-left__container">
+              <CartWidget />
+            </div>
+        </div>
 
-         
-          </NavDropdown>
-          <Nav.Link href="/" >
-            Home
-          </Nav.Link>
-          <Nav.Link href="/store" >
-            Store
-          </Nav.Link>
-          <Nav.Link href="/about" >
-            About
-          </Nav.Link>
-        </Nav>
-        <CartWidget cartQuantity = { cartQuantity }/>
+        <NavbarBS.Collapse id="responsive-navbar-nav">
+
+          <Nav className="me-auto">
+              <Nav.Link to="/" as={NavLink}>
+                ALL
+              </Nav.Link>
+        
+              <Nav.Link to="/category/women's clothing" as={NavLink}>
+                WOMEN
+              </Nav.Link>
+          
+              <Nav.Link to="/category/men's clothing" as={NavLink}>
+                MEN
+              </Nav.Link>
+          
+              <Nav.Link to="/category/electronics" as={NavLink}>
+                ELECTRONIC
+              </Nav.Link>
+          
+              <Nav.Link to="/category/jewelery" as={NavLink}>
+                JEWELERY
+              </Nav.Link>
+          </Nav>
+        </NavbarBS.Collapse>
+        <div className="cart-right__container">
+          <CartWidget />
+        </div>
       </Container>
-    </NavbarBS>
-   
+    </NavbarBS> 
   )
+
 }

@@ -11,12 +11,12 @@ export const useFetch = (url) => {
 
     useEffect(() => {
 
-        getFetch();
+        getItem();
 
     }, [url])
     
 
-    const getFetch = async () => {
+    const getItem = async () => {
 
         setState({
             ...state,
