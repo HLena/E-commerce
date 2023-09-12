@@ -31,7 +31,7 @@ export const CartControlButtons = ({ item }) => {
             </div>
             <Button 
                 variant="outline-primary" 
-                onClick={() => addItem(id, {})}
+                onClick={() => addItem(id, item)}
             >
                 +
             </Button>

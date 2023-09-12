@@ -1,0 +1,263 @@
+[
+    {
+        "name":"AirPods Pro 2da Gen",
+        "price":1169,
+        "discount":5,
+        "category": "audio & tv",
+        "description": ["El control táctil te permite deslizar para ajustar el volumen, presionar para dirigir la reproducción multimedia",
+        "Audio espacial personalizado con seguimiento dinámico de la cabeza coloca sonido a tu alrededor.",
+        "Múltiples almohadillas (XS, S, M, L)",
+        "Resistente al sudor y al agua."],
+        "images": ["airposd_pro_1", "airposd_pro_2","airposd_pro_3","airposd_pro_4"],
+        "details": {
+            "Marca": "Apple",
+            "Color": "Blanco",
+            "Procesador": "Chip H2",
+            "Resistencia al agua": "Resistentes al agua y al sudor (IPX4)",
+            "Cancelación de ruido": "Sí",
+            "Batería": "Hasta 6 horas de audio",
+            "Conectividad": "Bluetooth 5.3",
+            "Dimensiones": "4,5 x 6 x 2,1 cm",
+            "Peso": "50.8 gr.",
+            "Contenido": "01 AirPods Pro, Estuche de carga, Almohadillas, Cable Lightning a USB-C y Documentación"
+        }
+    },
+    {
+        "name":"HomePod 2da Gen.",
+        "price":1585,
+        "discount":16,
+        "category": "audio & tv",
+        "description": ["Se adapta de manera inteligente a lo que sea que esté reproduciendo, o donde sea que esté reproduciendo, y lo envuelve en un audio envolvente que hace que todo lo que escuche suene increíble.",
+        "HomePod tiene una matriz de cinco tweeters de formación de haces alrededor de su base.",
+        "Disfruta de un nivel completamente nuevo de espacio y capas con HomePod."],
+        "images": ["homepod_1", "homepod_2", "homepod_3"],
+        "details":{
+            "Marca": "Apple",
+            "Color": "White / Midnight",
+            "Compatibilidad": "iPhone 14 Pro Max, iPhone 14 Pro, iPhone 14 Plus, iPhone 14, iPhone 13 Pro Max, iPhone 13 Pro, iPhone 13, iPhone 13 mini, iPhone 12 Pro Max, iPhone 12 Pro, iPhone 12, iPhone 12 mini, iPhone 11 Pro Max, iPhone 11 Pro, iPhone 11, iPhone XS Max, iPhone XS, iPhone XR, iPhone X, iPhone 8 Plus iPhone 8, 12.9-inch iPad Pro, 11-inch iPad Pro, 10.5-inch iPad Pro, 9.7-inch iPad Pro, iPad (10th generation), iPad (9th generation), iPad (8th generation), iPad (7th generation), iPad (6th generation), iPad (5th generation), iPad Air (5th generation), iPad Air (4th generation), iPad Air (3rd generation), iPad mini (6th generation), iPad mini (5th generation)",
+            "Botones": "Toque Reproducir/Pausar, Toca dos veces Saltar, Toca tres veces Saltar atrás, Toca y mantén presionada Siri, Toque o mantenga presionado + o – Subir/bajar volumen",
+            "Sonido": "Woofer de alta excursión de 4 pulgadas",
+            "Inalámbrico": "WiFi, Detección punto a punto para facilitar el acceso de invitados, Bluetooth 5.0, Hilo, Chip de banda ultraancha para proximidad de dispositivos.",
+            "Sensores": "Reconocimiento de sonido, temperatura y humedad, acelerómetro",
+            "Dimensiones": "16.8 x 14.2 cm",
+            "Peso": "2.3 Kg.",
+            "Contenido": "01 HomePod, Cable de energía, Documentación"
+
+        }
+    },
+    {
+        "name":"Audífono Beats Studio Buds Inalámbricos con Micrófono Black 2021",
+        "price":699,
+        "discount":5,
+        "category":"audio & tv",
+        "description":[
+            "Reproducción 24 hrs con case de carga",
+            "Resistente al sudor y al agua (IPX4)",
+            "Cancelación activa del ruido",
+            "Compatible con Android y Apple",
+            "Conectividad Bluetooth"
+        ],
+        "images":[
+            "audifonos_beats_1",
+            "audifonos_beats_2",
+            "audifonos_beats_3",
+            "audifonos_beats_4"
+        ],
+        "details":{
+            "Marca": "Beats",
+            "Modelo": "MJ4Y3LL/A",
+            "SKU": "UL01439",
+            "Conectividad": "Bluetooth",
+            "Color": "Black",
+            "Reproducción": "24 horas con case de carga",
+            "Factor de forma de auriculares": "In Ear",
+            "Resistente al sudor + al agua": "Sí",
+            "Micrófono": "Sí",
+            "Recepción de llamadas": "Sí",
+            "Contenido": "01 Audífono Beats Studio Buds ,Inalámbricos con Micrófono"
+        }
+    },
+    {
+        "name":"AirPods Max",
+        "price":2583,
+        "discount":14,
+        "category":"audio & tv",
+        "description":[
+            "Transductor dinámico diseñado por Apple que ofrece un sonido de alta fidelidad",
+            "Cancelación activa de ruido que filtra el sonido externo y te permite sumergirte en la música",
+            "Sonido envolvente, como en el cine",
+            "Prestaciones destacadas",
+            "Modo de sonido ambiente para escuchar lo que te rodea"
+        ],
+        "images":[
+            "airPods_max_1",
+            "airPods_max_2",
+            "airPods_max_3",
+            "airPods_max_4",
+            "airPods_max_5",
+            "airPods_max_6"
+        ],
+        "details":{
+            "Marca": "Apple",
+            "Modelo": "AirPods Max",
+            "Color": ["Silver", "Green", "Pink", "Sky Blue", "Space Gray"],
+            "Año del modelo": "2020",
+            "Chip": "Apple H1",
+            "Sensores": "Sensor óptico (cada auricular), Sensor de posición (cada auricular), Sensor de detección de casos (cada auricular), Acelerómetro (cada auricular), Giroscopio (auricular izquierdo)",
+            "Batería": "Hasta 20 horas",
+            "Conectividad":" Bluetooth 5.0",
+            "Tamaño": "16,8 x 8,3 x 18,7 cm",
+            "Peso": "0.4 kg.",
+            "Contenido": "01 AirPods Max, Funda inteligente, Cable Lightning a USB-C, Documentación"
+        }
+    },
+    {
+        "name":"iPhone 14 Pro Libre de Fábrica",
+        "price":5429,
+        "discount":14,
+        "category":"phones",
+        "description":[
+            "Modo cinemático ahora en 4K Dolby Vision hasta 30 fps. Modo de acción para videos fluidos, estables y portátiles.",
+            "A16 Bionic, el último chip para teléfonos inteligentes. Celular 5G ultrarrápido.",
+            "Pantalla Super Retina XDR de 6,1 pulgadas con Always-On y ProMotion.",
+            "Dynamic Island, una nueva forma mágica de interactuar con el iPhone.",
+            "Cámara principal de 48 MP para una resolución hasta 4 veces mayor."
+        ],
+        "images":[
+            "iPhone_14_Pro",
+            "iPhone_14_Pro_purple",
+            "iPhone_14_Pro_gold",
+            "iPhone_14_Pro_silver",
+            "iPhone_14_Pro_black"
+
+        ],
+        "details":{
+            "Marca": "Apple",
+            "Modelo": "iPhone 14 Pro",
+            "Año de Modelo": "2022",
+            "Pantalla": "Resolución de 2556 x 1179 pixeles a 460 ppi / Super Retina XDR display, 6,1pulgadas (diagonal)",
+            "Sist. Operativo": "iOS 16",
+            "Procesador": "Chip biónico A16",
+            "Cámara Frontal": "12 MP con una apertura de f/1,9. Enfoque automático con píxeles de enfoque",
+            "Cámara Trasera": "Principal de 48 MP: 24 mm, apertura de ƒ/1,78, estabilización de imagen óptica con cambio de sensor de segunda generación / Ultra gran angular de 12 MP: 13 mm, apertura de ƒ/2,2 y campo de visión de 120°, lente de seis elementos / Teleobjetivo 2x de 12 MP (habilitado por sensor de cuatro píxeles): 48 mm, apertura de ƒ/1,78, estabilización de imagen óptica con cambio de sensor de segunda generación",
+            "Vídeo": "Grabación de video 4K a 24 fps, 25 fps, 30 fps o 60 fps",
+            "Audio": "Reproducción de audio espacial",
+            "Tarjeta Sim": "Tiene compatiblidad con eSIM",
+            "Batería": "Hasta 23 horas",
+            "Tamaño": "14.7 x 7.1 x 0.7 cm",
+            "Peso": "206 gr.",
+            "Contenido": "01 iPhone 14 Pro, Cable USB-C a Lightning, Documentación",
+            "color":["purple","gold","silver","black"]
+        }
+    },
+    {
+        "name":"iPhone 14 Plus Libre de Fábrica",
+        "price":4575,
+        "discount":5,
+        "category":"phones",
+        "description": [
+            "Pantalla Super Retina XDR de 6,7 pulgadas y sistema de cámara avanzado para obtener mejores fotografías con cualquier iluminación.",
+            "Chip A15 Bionic con GPU de 5 núcleos para un rendimiento ultrarrápido. Celular 5G ultrarrápido.",
+            "Duración de la batería durante todo el día y hasta 26 horas de reproducción de video.",
+            "Modo cinemático ahora en 4K Dolby Vision hasta 30 fps.",
+            "Modo de acción para videos fluidos, estables y portátiles."
+        ],
+        "images":[
+            "iPhone_14_Plus",
+            "iPhone_14_Plus_blue",
+            "iPhone_14_Plus_black",
+            "iPhone_14_Plus_purple",
+            "iPhone_14_Plus_red",
+            "iPhone_14_Plus_white",
+            "iPhone_14_Plus_yellow"
+
+        ],
+        "details":{
+            "Marca": "Apple",
+            "Modelo": "iPhone 14 Plus",
+            "Año de Modelo": "2022",
+            "Pantalla": "Resolución de 2778 x 1284 pixeles a 458 ppi / Pantalla Súper Retina XDR 6,7 pulgadas (diagonal)",
+            "Sist. Operativo": "iOS 16",
+            "Procesador":" Chip biónico A15",
+            "Cámara Frontal": "12 MP con una apertura de f/1,9. Enfoque automático con píxeles de enfoque",
+            "Cámara Trasera": "Principal de 12 MP: 26 mm, apertura de ƒ/1,5, estabilización de imagen óptica por cambio de sensor / Ultra gran angular de 12 MP: 13 mm, apertura de ƒ/2,4 y campo de visión de 120°",
+            "Vídeo": "Grabación de video 4K a 24 fps, 25 fps, 30 fps o 60 fps",
+            "Audio": "Reproducción de audio espacial",
+            "Tarjeta Sim": "Tiene compatiblidad con eSIM",
+            "Batería": "Hasta 26 horas",
+            "Tamaño": "16 x 7.8 x 0.7 cm",
+            "Peso": "203 gr.",
+            "Contenido":" 01 iPhone 14 Plus , Cable USB-C a Lightning, Documentación",
+            "color":["blue","black","purple","white", "yellow"]
+        }
+    },
+    {
+        "name": "ASUS ROG Strix G16 16 pul 165Hz Intel Core i7 16GB RAM 512GB SSD RTX 4060 Eclipse Gray",
+        "category":"laptops",
+        "description": [
+            "El sistema ROG Intelligent Cooling con metal líquido mejorado en la CPU y tecnología Tri-Fan garantiza que la computadora portátil pueda manejar la potencia que puede ofrecer.",
+            "Mejore su juego y lleve a su escuadrón con el nuevo ROG Strix G16, una poderosa computadora portátil para juegos que cuenta con Windows 11.",
+            "Cuenta con un conmutador MUX con Advanced Optimus que optimiza el rendimiento de los juegos."
+        ],
+        "price":6459,
+        "discount": 5,
+        "images": [
+            "aus_rog_1",
+            "aus_rog_2",
+            "aus_rog_3",
+            "aus_rog_4",
+            "aus_rog_5"
+        ],
+        "details":{
+            "Marca": "ASUS",
+            "Modelo": "G614JV-AS73",
+            "Año de modelo": "2023",
+            "Pantalla": "16 pul Pantalla FHD de 165Hz, Relación 16:10, 1920 x 1200 píxeles, Espacio de color sRGB, Dolby Vision, Validación Pantone",
+            "Sistema Operativo": "Windows 11",
+            "Procesador": "Intel Core i7-13650HX",
+            "Ram": "16GB DDR5",
+            "Almacenamiento": "PCIe de 512GB SSD",
+            "Tarjeta Gráfica": "NVIDIAGeForce RTX 4060",
+            "Cámara Frontal": "720P HD camera",
+            "Batería": "1 batería de iones de litio",
+            "Tamaño": "35.4 x 26.4 x 2.2 cm",
+            "Peso": "2.5 kg",
+            "Contenido": "01 ASUS ROG Strix G16 16 pul 165Hz Intel Core i7 16GB RAM 512GB SSD RTX 4060 Eclipse Gray, 01 Cable de alimentación y adaptador, 01 Manual de usuario"
+        }   
+    },
+    {
+        "name": "iPad Air Wifi (5ª Generación)",
+        "category" :"tablets",
+        "description": [
+            "Realice múltiples tareas sin problemas entre aplicaciones potentes y juegue juegos con gráficos intensivos.",
+            "Cámara frontal ultra ancha de 12MP habilita Center Stage.",
+            "El innovador chip M1."
+        ],
+        "price":2639,
+        "discount": 16,
+        "details": {
+            "Marca": "Apple",
+            "Sist. Operativo": "iPadOS",
+            "Procesador": "Chip M1",
+            "Pantalla": "Pantalla multitáctil con retroiluminación LED de 10,9 pulgadas",
+            "Video":" Grabación de video 4K a 24 fps, 25 fps, 30 fps o 60 fps (ancho)",
+            "Cámara": "12 MP wide-angle camera and ƒ/1.8 aperture",
+            "Batería": "Hasta 10 horas",
+            "Contenido": "01 iPad Air, USB-C charging cable (1m), 20W USB-C Power Adapter",
+            "color": [
+                "gray", "white", "pink", "purple","blue"
+            ]
+        },
+        "images":[
+            "iPad_Air",
+            "iPad_Air_white",
+            "iPad_Air_gray",
+            "iPad_Air_pink",
+            "iPad_Air_purple",
+            "iPad_Air_blue"
+        ]
+
+    }
+    
+]
+

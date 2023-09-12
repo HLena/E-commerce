@@ -5,7 +5,7 @@ import { CartItem } from '../components/CartItem';
 import '../assets/styles/cartPage.css'; 
 import { useNavigate } from 'react-router-dom';
 
-export const CartContainer = () => {
+export const Cart = () => {
 
     const { 
         cartItems, 

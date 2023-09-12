@@ -8,7 +8,6 @@ export const useCart = () => {
 
 export const CartProvider = ({ children }) => {
 
-    // const [isOpen, setIsOpen] = useState(false);
     const [cartItems, setCartItems] = useState([]);
   
   

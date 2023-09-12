@@ -1,8 +1,9 @@
 import { Container, Nav, Navbar as NavbarBS, Image } from "react-bootstrap";
 import { CartWidget } from './CartWidget';
-import { NavLink } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import logoWhite from '../assets/images/logo-white.png';
 import logoBlack from '../assets/images/logo-black.png';
+import categories from '../data/category.json';
 
 import '../assets/styles/navbar.css';
 
@@ -25,28 +26,18 @@ export const Navbar = () => {
         <NavbarBS.Collapse id="responsive-navbar-nav">
 
           <Nav className="me-auto">
-              <Nav.Link to="/" as={NavLink}>
-                ALL
-              </Nav.Link>
+            {
+              categories.map( ({name, path}) => (
+                <Nav.Link key={name} to={path} as={NavLink}>
+                  {name}
+                </Nav.Link>
+              ))
+            }
         
-              <Nav.Link to="/category/women's clothing" as={NavLink}>
-                WOMEN
-              </Nav.Link>
-          
-              <Nav.Link to="/category/men's clothing" as={NavLink}>
-                MEN
-              </Nav.Link>
-          
-              <Nav.Link to="/category/electronics" as={NavLink}>
-                ELECTRONIC
-              </Nav.Link>
-          
-              <Nav.Link to="/category/jewelery" as={NavLink}>
-                JEWELERY
-              </Nav.Link>
           </Nav>
         </NavbarBS.Collapse>
         <div className="cart-right__container">
+          <Link to="/login">Login</Link>
           <CartWidget />
         </div>
       </Container>
