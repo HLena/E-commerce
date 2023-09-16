@@ -3,10 +3,9 @@ import { Route, Routes, BrowserRouter} from 'react-router-dom'
 import { ItemListContainer } from '../pages/ItemListContainer'
 import { ItemDetailContainer } from '../pages/ItemDetailContainer'
 import { Home } from '../pages/Home'
-import { Cart } from '../pages/Cart'
 import { Navbar } from '../components/Navbar'
 import { Login } from '../auth/pages/Login'
-import { Container } from 'react-bootstrap'
+import { CartRoutes } from '../cart/routes/Routes'
 
 export const MainRoutes = () => {
   return (
@@ -27,8 +26,8 @@ export const MainRoutes = () => {
             element={<ItemDetailContainer />}
             />
             <Route 
-            path="/cart" 
-            element={<Cart />}
+            path="/cart/*" 
+            element={<CartRoutes/>}
             />
             <Route 
             path="/login" 
