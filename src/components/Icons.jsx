@@ -1,4 +1,6 @@
 
+import 'bootstrap-icons/font/bootstrap-icons.css';
+
 const CartIcon = () => {
     return (
         <svg
@@ -20,7 +22,17 @@ const DeleteIcon = () => {
     )
 }
 
+const UserIcon = () => {
+    return <i className="bi bi-person-circle"/>
+}
+
+const FavoriteIcon = () => {
+    return <i className="bi bi-heart"/>
+}
+
 export { 
     CartIcon,
-    DeleteIcon
+    DeleteIcon,
+    UserIcon,
+    FavoriteIcon
 }

@@ -6,6 +6,7 @@ import logoBlack from '../assets/images/logo-black.png';
 import categories from '../data/category.json';
 
 import '../assets/styles/navbar.css';
+import { FavoriteIcon, UserIcon } from "./Icons";
 
 export const Navbar = () => {
 
@@ -37,7 +38,9 @@ export const Navbar = () => {
           </Nav>
         </NavbarBS.Collapse>
         <div className="cart-right__container">
-          <Link to="/login">Login</Link>
+          <FavoriteIcon/>
+          <UserIcon/>
+          <Link to="/login">Iniciar Sesión</Link>
           <CartWidget />
         </div>
       </Container>

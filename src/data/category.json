@@ -1,8 +1,8 @@
 
  [
-        {"name": "All", "path": "/"},
+        {"name": "Todo", "path": "/"},
         {"name": "Audio & TV", "path": "category/audio & tv"},
-        {"name": "Phones", "path": "category/phones"},
+        {"name": "Celulares", "path": "category/phones"},
         {"name": "Laptops", "path": "category/laptops"},
         {"name": "Tablets", "path": "category/tablets"}
 ]

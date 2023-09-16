@@ -29,6 +29,7 @@ export const ItemDetail = ({ data, quantityItem }) => {
   }
 
   const imagesQuantity = images.length;
+  
 
   const elementos = [];
     for (const atrr in details) {
@@ -73,12 +74,14 @@ export const ItemDetail = ({ data, quantityItem }) => {
           <div className="d-flex w-100 align-items-center gap-3" >
             Cantidad:   
           <CartControlButtons item = {{
-                quantityItem,
                 title: name ,
                 price,
                 image: imageSelected.image,
                 id,
-              }}/>
+                discount
+              }}
+              quantityItem = {quantityItem}
+              />
           </div>
         </div>
       </div>

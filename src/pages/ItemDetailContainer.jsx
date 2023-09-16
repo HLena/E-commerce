@@ -1,6 +1,4 @@
-import { Col, Container, Row, Image, Button} from "react-bootstrap";
 import { useParams } from "react-router-dom"
-import { CartControlButtons } from "../components/CartControlButtons";
 import { useCart } from "../context/CartContext";
 import { getProductById } from "../firebase/getData";
 import {useFirestore} from "../hooks/useFirestore";

@@ -1,12 +1,10 @@
 import { Button } from "react-bootstrap"
 import { useCart } from "../context/CartContext";
-import { DeleteIcon } from "./Icons";
 
-export const CartControlButtons = ({ item }) => {
+export const CartControlButtons = ({ item, quantityItem }) => {
 
     const {
         id,
-        quantityItem
     } = item;
       
     const {
