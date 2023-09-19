@@ -53,9 +53,9 @@ export const CartItem = ({
           </div>
           <div className = "d-flex align-items-start cart-item__price" >
             <p className="fst-italic fs-6 m-0">
-              {Math.ceil(priceWithDiscount)}$ <small className="discount-text">{-discount}%</small>
+            S/ {Math.ceil(priceWithDiscount)} <small className="discount-text">{-discount}%</small>
             </p>
-            <small className="text-body-tertiary text-decoration-line-through">{price}$</small>
+            <small className="text-body-tertiary text-decoration-line-through">S/ {price}</small>
           </div>
           <div className="d-flex align-items-center" >
             <div className="d-flex justify-content-evenly align-items-center"> 
@@ -74,14 +74,16 @@ export const CartItem = ({
                 >
                   +
               </Button>
-              <Button className="mr-1" onClick = { () => deleteItem(id) }><DeleteIcon/></Button>
             </div>
           </div >
           <div className = "d-flex align-items-start cart-item__price" >
             <p className="fst-italic fs-6 m-0">
-              { Math.ceil(priceWithDiscount) * quantity }$
+            S/ { Math.ceil(priceWithDiscount) * quantity }
             </p>
           </div>
+          <Button 
+            variant="light"
+            className="mr-1" onClick = { () => deleteItem(id) }><DeleteIcon/></Button>
         </div>
       </div>
   )

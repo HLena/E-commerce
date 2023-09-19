@@ -37,12 +37,12 @@ export const Cart = () => {
                       </div>
                   </div>
                   <hr />
-                  <div className = 'p-3  rounded d-grid gap-2  cart__purchase-summary justify-content-end'>
-                      <div className="d-flex justify-content-between  w-40">
+                  <div className = 'cart__purchase-summary'>
+                      <div className="total-price__container">
                           <h5 className='fw-bold'>Total</h5> 
-                          <h5 className='fw-bold'>{totalPriceCart}$</h5>
+                          <h5 className='fw-bold'>S/ {totalPriceCart}</h5>
                       </div>
-                      <div className="d-flex gap-2 justify-content-end">
+                      <div className="btn-checkout__container">
                           <Button 
                             className='btn btn-secondary fw-bold'
                             onClick={clearCart}
