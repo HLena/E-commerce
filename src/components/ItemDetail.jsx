@@ -1,9 +1,9 @@
-import { Button, Col, Row, Image } from "react-bootstrap";
-import { CartControlButtons } from "./CartControlButtons";
+import { Image, Button } from "react-bootstrap";
+import { Counter } from "./Counter";
 import '../assets/styles/itemDetail.css';
 import { useState } from "react";
 
-export const ItemDetail = ({ data, quantityItem }) => {
+export const ItemDetail = ({ data, quantityItem, addItem }) => {
 
   
   const { 
@@ -15,6 +15,8 @@ export const ItemDetail = ({ data, quantityItem }) => {
     discount,
     id
   } = data;
+
+  const [quantityToIncrement, setQuantityToIncrement] = useState(1);
 
   const [imageSelected, setImageSelected] = useState({
     image: images[0],
@@ -29,6 +31,7 @@ export const ItemDetail = ({ data, quantityItem }) => {
   }
 
   const imagesQuantity = images.length;
+  const priceWithDiscount = price - ((price * discount) / 100);
   
 
   const elementos = [];
@@ -69,20 +72,32 @@ export const ItemDetail = ({ data, quantityItem }) => {
             }
           </ul>
           <hr />
-
-          <h3>{price} $ - {discount}%</h3>
+          <div className = "d-flex align-items-start cart-item__price" >
+            <p className="fst-italic fs-4 m-0">
+            S/ {Math.ceil(priceWithDiscount)} <small className="discount-text">{-discount}%</small>
+            </p>
+            <small className="text-body-tertiary text-decoration-line-through fs-5">S/ {price}</small>
+          </div>
           <div className="d-flex w-100 align-items-center gap-3" >
             Cantidad:   
-          <CartControlButtons item = {{
+            <Counter 
+              quantity = {quantityToIncrement}
+              setQuantity={ setQuantityToIncrement }
+              />
+          </div>
+          <Button  
+            className="my-3 w-100"
+            onClick={() => addItem(id, 
+              {
                 title: name ,
                 price,
                 image: imageSelected.image,
-                id,
                 discount
-              }}
-              quantityItem = {quantityItem}
-              />
-          </div>
+              }, quantityToIncrement
+            )}
+          >
+              Agregar al carrito
+          </Button>
         </div>
       </div>
       <div className = "item__container">

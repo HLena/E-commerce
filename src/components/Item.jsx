@@ -32,7 +32,7 @@ export const Item = ({id, name, images, description, price}) => {
           }>
             { name }
           </Card.Title>
-        <Card.Text className='text-body-tertiary fs-5 fw-bolder'>{ price } $ </Card.Text>
+        <Card.Text className='text-body-tertiary fs-5 fw-bolder'>S/ { price }</Card.Text>
         <Button variant="primary w-100">
           Comprar
         </Button>
