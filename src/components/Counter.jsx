@@ -1,17 +1,9 @@
 import { Button } from "react-bootstrap"
 import { useCart } from "../context/CartContext";
 
-export const CartControlButtons = ({ item, quantityItem }) => {
+export const Counter = ({quantity, setQuantity}) => {
 
-    const {
-        id,
-    } = item;
-      
-    const {
-        addItem,
-        removeItem,
-    } = useCart();
-
+  
 
     return (
         <div
@@ -19,18 +11,21 @@ export const CartControlButtons = ({ item, quantityItem }) => {
             style={{ gap: ".5rem"}}
         >
             <Button
+                className="counter-btn"
                 variant="outline-primary" 
-                onClick={() => removeItem(id)}
-            >
+                onClick={() => setQuantity(
+                    prevStatus => prevStatus == 1 
+                        ? 1
+                        : prevStatus - 1)}
+                >
                 -
             </Button>
-            <div>
-                <span className="fs-5">{quantityItem} in cart </span> 
-            </div>
+                <span className="fs-5">{quantity}</span> 
             <Button 
+                className="counter-btn"
                 variant="outline-primary" 
-                onClick={() => addItem(id, item)}
-            >
+                onClick={() => setQuantity(quantity + 1)}
+                >
                 +
             </Button>
 
