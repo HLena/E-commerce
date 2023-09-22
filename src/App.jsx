@@ -1,14 +1,16 @@
 import { CartProvider } from './context/CartContext'
 import { MainRoutes } from './routes/MainRoutes'
-import './assets/styles/style.css';
+import { AuthProvider } from './context/AuthContext';
 
 
 function App() {
 
   return (
+    <AuthProvider>
       <CartProvider>
         <MainRoutes/>
       </CartProvider>
+    </AuthProvider>
   )
 }
 

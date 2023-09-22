@@ -1,6 +1,13 @@
 
 import { db } from './firebase';
-import { collection, query, where, getDocs, doc, getDoc } from "firebase/firestore";
+import { 
+    collection, 
+    query, 
+    where, 
+    getDocs, 
+    doc, 
+    getDoc
+} from "firebase/firestore";
 
 const getProductsByCategory = async (category) => {
     
