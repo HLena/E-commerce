@@ -3,12 +3,17 @@ import { Cart } from "../pages/Cart"
 import { Checkout } from "../pages/Checkout"
 import { Payment } from "../pages/Payment"
 import { Breadcrumb } from "../components/Breadcrumbs"
+import { useCart } from "../../context/CartContext"
 
 export const CartRoutes = () => {
+  const { 
+      quantityItems
+  } = useCart();
   return (
-    <>
         <div className="container">
-            <Breadcrumb/>
+          {
+            quantityItems > 0 && <Breadcrumb/>
+          }
             <Routes>
                 <Route path = "" element = {<Cart/>}/>
                 <Route path = "/checkout" element = { <Checkout/> }/>
@@ -17,6 +22,5 @@ export const CartRoutes = () => {
 
             </Routes>
         </div>
-    </>
   )
 }

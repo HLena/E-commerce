@@ -1,8 +1,12 @@
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import { Button, FormGroup, FormControl, FormLabel } from 'react-bootstrap';
 import * as yup from 'yup';
+import { validateEmail, confirmEmail } from '../../utils/validations';
 
-export const CheckoutForm = () => {
+
+export const CheckoutForm = ({
+  generateOrder
+}) => {
 
 
   const schema = yup.object().shape({
@@ -13,21 +17,7 @@ export const CheckoutForm = () => {
     phone: yup.number().required("El teléfono es requerido"),
   });
 
-  const validateEmail = (value) => {
-    let error;
-    if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(value)) {
-      error = 'Dirección de correo electrónico no válida';
-    }
-    return error;
-  }
-
-  const confirmEmail = (values) => {
-    let error;
-    if (values.email != values.confirmEmail) {
-      error = 'Los correos no coinciden';
-    } 
-    return error;
-  }
+  
 
   return (
     <div className="item-container__wrapper">
@@ -35,7 +25,7 @@ export const CheckoutForm = () => {
       <Formik
         validationSchema={schema}
         onSubmit={(values) => {
-          console.log(values);
+          generateOrder(values);
         }}
         initialValues={{
           firstName: '',
@@ -88,7 +78,7 @@ export const CheckoutForm = () => {
                   name="email"
                   value={values.email}
                   onChange={handleChange}
-                  validate = {validateEmail}
+                  validate = {() =>validateEmail(values.email)}
                   as={FormControl}
                   isValid={touched.email && !errors.email}
                   isInvalid={!!errors.email}
