@@ -12,34 +12,30 @@ export const CartWidget = () => {
     
 
     return (
-
-        <>
-            {quantityItems > 0 && 
-                <Button
-                    onClick={goToCart}
-                    style={{ width: "3rem", height: "3rem", position: "relative"}}
-
-                    variant="outline-light"
-                    className="rounded-circle me-4"
-                >
-                    <CartIcon/>
-
+        <div
+            onClick={goToCart}
+            className="position-relative"
+        >
+            <CartIcon/>
+            {
+                quantityItems > 0 && 
                     <div
-                    className="rounded-circle bg-danger d-flex justify-content-center align-items-center"
-                    style={{
-                        color: "white",
-                        width: "1.5rem",
-                        height: "1.5rem",
-                        position: "absolute",
-                        top: "-0.5rem",
-                        right: "-0.5rem",
-                        transform: "translate(25%, 25%)",
-                    }}
+                        className="rounded-circle bg-danger d-flex justify-content-center align-items-center"
+                        style={{
+                            color: "white",
+                            width: "1.2rem",
+                            height: "1.2rem",
+                            position: "absolute",
+                            top: "-0.5rem",
+                            right: "-0.2rem",
+                            transform: "translate(25%, 25%)",
+                            fontSize: '12px',
+                            fontWeight: 'bolder'
+                        }}
                     >
-                    {quantityItems}
+                        {quantityItems}
                     </div>
-                </Button>
             }
-        </> 
+        </div>
     )
 }

@@ -1,12 +1,21 @@
-.navbar-brand__container{
-  width: 100%;
-  justify-content: space-between;
-}
-.cart-right__container{
+
+.list-navlink{
   display: none;
 }
 
+.menu-button{
+  border: none;
+  background: none;
+  border-radius: 10px;
+}
+.menu-button:hover{
+  background: whitesmoke;
+}
 @media (min-width: 992px) {
+  .menu-button{
+    visibility: hidden;
+    display: none;
+  }
   
   .navbar-brand__container{
     width: auto;
@@ -14,7 +23,8 @@
   .cart-left__container{
     visibility: hidden;
   }
-  .cart-right__container{
-    display: block;
+  .list-navlink{
+    display: flex;
+  
   }
 }
