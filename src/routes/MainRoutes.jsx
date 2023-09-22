@@ -4,7 +4,6 @@ import { ItemListContainer } from '../pages/ItemListContainer'
 import { ItemDetailContainer } from '../pages/ItemDetailContainer'
 import { Home } from '../pages/Home'
 import { Navbar } from '../components/Navbar'
-import { Login } from '../auth/pages/Login'
 import { CartRoutes } from '../cart/routes/Routes'
 
 export const MainRoutes = () => {
@@ -28,10 +27,6 @@ export const MainRoutes = () => {
             <Route 
             path="/cart/*" 
             element={<CartRoutes/>}
-            />
-            <Route 
-            path="/login" 
-            element={<Login />}
             />
         </Routes>
       </div>
