@@ -1,9 +1,47 @@
-import { db, storage } from "./firebase";
-import { collection, addDoc} from 'firebase/firestore';
+
+import { db, storage } from './firebase';
+import { 
+    collection, 
+    query, 
+    where, 
+    getDocs, 
+    doc, 
+    getDoc
+} from "firebase/firestore";
 import { ref, uploadBytes, getDownloadURL } from 'firebase/storage'
 
-import products from '../data/products.json';
+const getProductsByCategory = async (category) => {
+    
+    let documents;
+    const data = [];
+    if(!category) {
+        documents = query(collection(db, "products"));
+    } else {
+        documents = query(collection(db, "products"), where("category", "==", category.toLowerCase()));
+    }
+    const querySnapshot = await getDocs(documents);
+    querySnapshot.forEach((doc) => {
+        const documento = doc.data();
+        data.push({...documento, id: doc.id});
+    });
 
+    return data;
+}
+
+const getProductById = async (id) => {
+
+    const docRef = doc(db, "products",id);
+    const docSnap = await getDoc(docRef);
+
+    if (docSnap.exists()) {
+        return {
+            ...docSnap.data(),
+            id: docSnap.id
+        }
+      } else {
+        return null;
+      }
+}
 
 const createImage = async (path, nameFile) => {
     const type = 'image/webp';
@@ -54,18 +92,11 @@ const createProduct = async () => {
     }
 }
 
-const createOrder = async (data, email) =>  {
-    try {
-        const docRef = collection(db, `orders/${email}/orders`);
-        await addDoc(docRef, data);
-        console.log("Orden creada correctamente", docRef.id);
-    } catch (error) {
-        console.log('Error al crear orden', error);
-    }
-
-}
 
 export {
-    createProduct,
-    createOrder
+    getProductsByCategory,
+    getProductById,
+    createProduct
 }
+
+
