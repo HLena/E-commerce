@@ -20,7 +20,7 @@
    transform: scale(1.2);
 }
 
-.container .products-container .product .discount-product{
+.product .discount-product{
    background:var(--mi-color);
    padding: .3rem .5rem;
    font-size: 12px;

@@ -1,6 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import { useCart } from "../../context/CartContext";
-import { Button, Container, Stack } from "react-bootstrap";
+import { Stack } from "react-bootstrap";
 import { CartItem } from "../components/CartItem";
 
 import '../../assets/styles/cartPage.css'; 
@@ -16,14 +16,14 @@ export const Cart = () => {
   const navigate = useNavigate();
 
   return (
-      <Container >
+      <div className="p-3">
           {
               (quantityItems > 0)
               ?  <>
-                  <div className = 'cart__container d-flex gap-3' >
-                      <div  className = 'cart__items my-3'>
+                  <div className = 'cart-container d-flex gap-3' >
+                      <div  className = 'my-3'>
                           <h4>Carrito <small>({quantityItems} productos)</small></h4>
-                          <Stack gap={3} >
+                          <Stack gap={3}  className="w-100">
                               {
                                   cartItems.map(item => {
                                       return (
@@ -37,36 +37,36 @@ export const Cart = () => {
                       </div>
                   </div>
                   <hr />
-                  <div className = 'cart__purchase-summary'>
-                      <div className="total-price__container">
+                  <div className = 'cart-purchase-summary'>
+                      <div className="total-price-container">
                           <h5 className='fw-bold'>Total</h5> 
                           <h5 className='fw-bold'>S/ {totalPriceCart}</h5>
                       </div>
-                      <div className="btn-checkout__container">
-                          <Button 
-                            className='btn btn-secondary fw-bold'
+                      <div className="checkout-btn-container">
+                          <button 
+                            className='bt secundary-btn '
                             onClick={clearCart}
                           >
                             Vaciar carrito
-                          </Button>
-                          <Button 
-                            className='fw-bold'
+                          </button>
+                          <button 
+                            className="bt main-btn"
                             onClick = { () => navigate('/cart/checkout')}
                           >
                             Continuar al checkout
-                          </Button>
+                          </button>
                       </div>
                   </div>
               </>
-              : <div className = 'cart-empty__container'>
+              : <div className = 'cart-empty-container'>
                   <h4>Tu carrito está vacío</h4> 
                   <p>Para continuar comprando, selecciona una categoría, o busca por tu producto.</p>
-                  <Button onClick = { () => navigate('/')}>
+                  <button className="btn main-btn" onClick = { () => navigate('/')}>
                       Elige un producto
-                  </Button>
+                  </button>
                 </div>
           }
 
-    </Container>
+    </div>
   )
 };

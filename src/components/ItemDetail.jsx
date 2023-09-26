@@ -1,9 +1,10 @@
-import { Image, Button } from "react-bootstrap";
+import { Image } from "react-bootstrap";
 import { Counter } from "./Counter";
 import '../assets/styles/itemDetail.css';
 import { useState } from "react";
+import { FavoriteBtn } from "./FavoriteBtn";
 
-export const ItemDetail = ({ data, quantityItem, addItem }) => {
+export const ItemDetail = ({ data, addItem }) => {
 
   
   const { 
@@ -47,10 +48,12 @@ export const ItemDetail = ({ data, quantityItem, addItem }) => {
 
   return (
     <>
-      <div className = "item__container item-details__container">
-        <div className="item-image__container text-center">
-          <Image src={imageSelected.image} style={{ width: '80%', padding: '2rem'}} />
-          <div className="image-list__container">
+      <div className = "product-container my-3">
+        <div className="product-image-container shadow-sm p-3 m-1 rounded-4">
+          <Image 
+            src={imageSelected.image}
+            className="image-displayed mb-3"/>
+          <div className="images-list-container">
             {
               images.map((img, index) => 
                 <Image 
@@ -58,50 +61,52 @@ export const ItemDetail = ({ data, quantityItem, addItem }) => {
                   onClick={() => onChangeImage(index)}
                   key={`${id}-img-${index}`}
                   style={{ width: `${100/imagesQuantity}%`, maxWidth: '100px', maxHeight: "100px"}} 
-                  className={`border cursor-pointer ${(index == imageSelected.index) ? 'image-selected': ''}`}/>
+                  className={`image-list${(index == imageSelected.index) ? 'image-selected': ''}`}/>
               )
             }
           </div>
         </div>
-        <div className="item-image__description">
-          <h4 className="item-name_title">{name}</h4>
+        <div className="product-details-container shadow-sm m-1 rounded-4">
+          <h4 className="product-title">{name}</h4>
           <hr />
-          <ul>
+          <ul className="product-details">
             {
               description.map((des, index) => <li key={`${id}-des-${index}`}>{des}</li> )
             }
           </ul>
           <hr />
-          <div className = "d-flex align-items-start cart-item__price" >
-            <p className="fst-italic fs-4 m-0">
-            S/ {Math.ceil(priceWithDiscount)} <small className="discount-text">{-discount}%</small>
-            </p>
-            <small className="text-body-tertiary text-decoration-line-through fs-5">S/ {price}</small>
+          <div className="price-container"> 
+            <h4 className="discounted-price">
+              S/ {Math.ceil(priceWithDiscount)} 
+            </h4>
+            <h4 className="total-price">S/ {price}</h4>
+            <h6 className="discount py-1 px-3 rounded-3">off {discount}%</h6>
           </div>
-          <div className="d-flex w-100 align-items-center gap-3" >
-            Cantidad:   
-            <Counter 
-              quantity = {quantityToIncrement}
-              setQuantity={ setQuantityToIncrement }
-              />
+          <div className = "counter-container" >
+              <Counter 
+                quantity = {quantityToIncrement}
+                setQuantity={ setQuantityToIncrement }
+                />
+              <button
+                className="bt main-btn"
+                onClick={() => addItem(id, 
+                  {
+                    title: name ,
+                    price,
+                    priceWithDiscount: Math.ceil(priceWithDiscount),
+                    image: imageSelected.image,
+                    discount
+                  }, quantityToIncrement
+                )}
+              >
+                  Agregar al carrito
+              </button>
+              <FavoriteBtn productId={id}/>
           </div>
-          <Button  
-            className="my-3 w-100"
-            onClick={() => addItem(id, 
-              {
-                title: name ,
-                price,
-                image: imageSelected.image,
-                discount
-              }, quantityToIncrement
-            )}
-          >
-              Agregar al carrito
-          </Button>
         </div>
       </div>
-      <div className = "item__container">
-        <h4>Descripción</h4>
+      <div className = "product-description-container rounded-4 shadow-sm m-1">
+        <h4 className="description-title">Descripción</h4>
         <hr />
         <ul>
           {

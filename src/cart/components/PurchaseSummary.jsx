@@ -9,7 +9,7 @@ export const PurchaseSummary = () => {
     } = useCart();
 
     return (
-        <div className="item-container__wrapper item-container__summary">
+        <div className="purchase-summary-container">
             <h5>Resumen de compra</h5>
             {
                 cartItems.map((
@@ -17,7 +17,7 @@ export const PurchaseSummary = () => {
                         id,
                         title,
                         image,
-                        price,
+                        priceWithDiscount,
                         quantity
                     }
                 ) => (
@@ -27,7 +27,7 @@ export const PurchaseSummary = () => {
                             <span className="item-quantity">{quantity}</span>
                         </div>
                         <strong className="item-title">{title}</strong>
-                        <span className="item-price">S/ {price}</span>
+                        <span className="item-price">S/ {priceWithDiscount}</span>
                     </div>
                 ))
             }

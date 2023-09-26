@@ -1,4 +1,4 @@
-import { collection, doc, getDoc, getDocs } from "firebase/firestore";
+import { addDoc, collection, getDocs } from "firebase/firestore";
 import { db } from "./firebase";
 
 const createOrder = async (data, email) =>  {
@@ -6,8 +6,10 @@ const createOrder = async (data, email) =>  {
         const docRef = collection(db, `orders/${email}/orders`);
         await addDoc(docRef, data);
         console.log("Orden creada correctamente", docRef.id);
+        return docRef.id
     } catch (error) {
         console.log('Error al crear orden', error);
+        return null
     }
 
 }

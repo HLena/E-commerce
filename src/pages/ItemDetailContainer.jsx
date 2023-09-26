@@ -1,6 +1,6 @@
 import { useParams } from "react-router-dom"
 import { useCart } from "../context/CartContext";
-import { getProductById } from "../firebase/getData";
+import { getProductById } from "../firebase/products";
 import {useFirestore} from "../hooks/useFirestore";
 import { ItemDetail } from "../components/ItemDetail";
 import { Loading } from "../components/Loading";

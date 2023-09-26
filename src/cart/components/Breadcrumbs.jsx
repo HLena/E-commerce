@@ -15,14 +15,15 @@ export const Breadcrumb = () => {
     },
     {
       path: '/cart/checkout',
-      name: 'Información',
+      name: 'Checkout',
       next: true
     },
     {
-      path: '/cart/payment',
-      name: 'Pago',
+      path: '/cart/confirmation',
+      name: 'Confirmación',
       next: false
     }
+   
   ]
 
 
@@ -38,11 +39,11 @@ export const Breadcrumb = () => {
 
   return (
 
-    <div className='breadcrumb__container'>
+    <div className='breadcrumb-container'>
       <ol className='breadcrumb-list'>
         {
           steps.map((step, index) => (
-            <li key = {`${index}-${step.name}`} className='breadcrumb-list__item'>
+            <li key = {`${index}-${step.name}`} className='breadcrumb-li'>
               <Link 
                 to = {index < indexStep ? step.path : null}
                 className={`breadcrumb-link ${style(index)}`}

@@ -142,38 +142,19 @@
 @media (min-width: 768px) {
     
     .checkout-container{
-        flex-direction: row;
-    }
-    .checkout-container .checkout-form-container{
-        width: 50%;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
     }
     
     .purchase-summary-container{
         padding-left: 1rem;
+
     }
    
 }
 
 
 
-@media (min-width: 992px) {
-    
-    .cart-item__image{
-        width: 25%;
-    }
-
-    .cart-item__details{
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: center;
-    }
-    .cart-item__title{
-        width: 200px;
-    }
-
-    
-
-}
 
 .counter-btn{
     border-radius: 15px;

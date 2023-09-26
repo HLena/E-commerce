@@ -2,7 +2,6 @@ import { addDoc, collection, deleteDoc, doc, getDocs, query, where } from "fireb
 import { db } from "./firebase";
 
 const addFavoriteProduct = async (productId,userId) => {
-    console.log(productId, userId);
     try {
             await addDoc(collection(db, "favorites"),
                 { 
@@ -11,7 +10,6 @@ const addFavoriteProduct = async (productId,userId) => {
                 }
             )
                 
-        console.log('Producto favorito guardado correctamente');
     } catch (error) {
         
         console.log('Error al agregar productos favoritos', error);

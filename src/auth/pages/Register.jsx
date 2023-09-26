@@ -1,5 +1,5 @@
 import { Formik, Form, Field, ErrorMessage } from 'formik';
-import { Button, FormGroup, FormControl, FormLabel } from 'react-bootstrap';
+import { FormGroup, FormControl, FormLabel } from 'react-bootstrap';
 import * as yup from 'yup';
 import { useAuth } from '../../context/AuthContext';
 
@@ -89,7 +89,6 @@ export const Register = () => {
                   type="password"
                   name="password"
                   value={values.password}
-                  // validate={() => password(values)}
                   as={FormControl}
                   onChange={handleChange}
                   isValid={touched.password && !errors.password}
@@ -105,11 +104,11 @@ export const Register = () => {
               <FormGroup className="mb-2">
                 <span>¿Ya tienes una cuenta? 
                   <a href='#' onClick={() => setForm('login')}>
-                     Incia sesión aquí
+                     Inciar sesión
                   </a>
                 </span>
               </FormGroup>
-              <Button type="submit">Crear cuenta</Button>
+              <button type="submit" className='bt main-btn'>Crear cuenta</button>
           </Form>
         )}
       </Formik>

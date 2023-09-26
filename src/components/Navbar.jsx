@@ -1,12 +1,11 @@
 import { Container, Nav, Navbar as NavbarBS, Image, Offcanvas } from "react-bootstrap";
 import { CartWidget } from './CartWidget';
-import { Link, NavLink } from 'react-router-dom';
-import logoWhite from '../assets/images/logo-white.png';
+import {  NavLink } from 'react-router-dom';
 import logoBlack from '../assets/images/logo-black.png';
 import categories from '../data/category.json';
 
 import '../assets/styles/navbar.css';
-import { FavoriteIcon, MenuIcon, UserIcon } from "./Icons";
+import { CustomIcon} from "./Icons";
 import { useAuth } from "../context/AuthContext";
 import { UserPopOver } from './UserPopOver';
 import { useState } from "react";
@@ -27,7 +26,7 @@ export const Navbar = () => {
       <button 
             className = "menu-button p-1"
             onClick = { handleShow }>
-              <MenuIcon/>
+              <CustomIcon name="menu"/>
       </button>
         <NavbarBS.Brand href="/">
             <Image src = {logoBlack} style={{ width: '100px'}}/>
@@ -45,13 +44,14 @@ export const Navbar = () => {
         {
           user 
           ? 
-            <div className="d-flex gap-2 border">
+            <div className="d-flex gap-2">
               <UserPopOver/>
               <CartWidget />
             </div>
-          : <div>
-              <a href="#" onClick={openModal}>Iniciar Sesión</a> 
-            </div>
+          : <button className="btn main-btn"
+              onClick={openModal}>
+              Iniciar Sesión 
+            </button>
         } 
       </Container>
       <Offcanvas show={show} onHide={handleClose}>

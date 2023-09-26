@@ -3,10 +3,10 @@ import { Item } from "./Item"
 
 export const ItemList = ({products}) => {
   return (
-    <Row className='d-flex flex-wrap justify-content-around'>
+    <div className='products-container'>
     {
         products.map((item) => <Item key = {item.id}  { ...item } />)
     }
-    </Row>
+    </div>
   )
 }

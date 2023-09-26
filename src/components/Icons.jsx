@@ -1,49 +1,59 @@
 
 import 'bootstrap-icons/font/bootstrap-icons.css';
 
-const CartIcon = () => {
-    return (
-        <i className="bi bi-cart2"  
-            style={{ 
-            fontSize: '24px', 
-            cursor:'pointer',
-            color: 'gray'}}
-        />
-    )
-}
-
-const DeleteIcon = () => {
-    return <i className="bi bi-x"/>
-}
-
-const UserIcon = () => {
-    return (
-            <i 
-                className="bi bi-person-circle" 
-                style={{ 
-                    fontSize: '24px', 
-                    cursor:'pointer',
-                    color: 'gray'}}/>
-    )
-}
 
 const FavoriteIcon = () => {
     return <i className="bi bi-heart"/>
 }
 
-const MenuIcon = () => {
-    return (
-        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" className = "bi bi-list" viewBox="0 0 16 16">
-            <path fillRule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"/>
-        </svg>
+const FavoriteIconFill = () => {
+    return <i className="bi bi-heart-fill"/>
+}
+
+
+
+const CustomIcon = ({name, size = 24, color = 'gray'}) => {
+    let iconName;
+    switch(name) {
+        case 'user':
+            iconName = "bi bi-person-circle" 
+            break;
+        case 'cart':        
+            iconName = "bi bi-cart2" 
+            break;
+        case 'favorite':
+            iconName = "bi bi-heart"
+            break;
+        case 'favorite-fill':
+            iconName = "bi bi-heart-fill"
+            break;
+        case 'order':
+            iconName = "bi bi-box"
+            break;
+        case 'menu':
+            iconName = "bi bi-list"
+            break
+        case 'delete':
+            iconName= "bi bi-x"
+            break
+        default:
+            iconName = '';
+
+    }
+    return  (
+        <i className={iconName}  
+            style={{ 
+                fontSize: `${size}px`, 
+                cursor:'pointer',
+                color: color
+            }}
+        />
     )
 }
 
 
 export { 
-    MenuIcon,
-    CartIcon,
-    DeleteIcon,
-    UserIcon,
-    FavoriteIcon
+    FavoriteIcon,
+    FavoriteIconFill,
+    CustomIcon
 }

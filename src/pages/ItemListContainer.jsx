@@ -1,13 +1,11 @@
-import { Col, Container, Row, Spinner } from 'react-bootstrap';
-import { Item } from '../components/Item';
 import { useParams } from 'react-router-dom';
 import { useFirestore } from '../hooks/useFirestore';
-import { getProductsByCategory } from '../firebase/getData';
+import { getProductsByCategory } from '../firebase/products';
 import { Loading } from '../components/Loading';
 import { ItemList } from '../components/ItemList';
 
 
-export const ItemListContainer = ({ greeting = 'Bienvenidos'}) => {
+export const ItemListContainer = () => {
 
   const { categoryId } = useParams();
 
@@ -16,14 +14,10 @@ export const ItemListContainer = ({ greeting = 'Bienvenidos'}) => {
   if(isLoading) return <Loading/>
     
   return (
-      <Container>
-        <Col>
-          <Row>
-            <h4 className='text-center text-uppercase my-5'>{ (!categoryId) ? 'All products' : categoryId  }</h4>
-          </Row>
+      <>
+          <h4 className='text-center my-5 text-uppercase'>{ (!categoryId) ? 'All products' : categoryId  }</h4>
           <ItemList products={data}/>
-        </Col>
-      </Container>
+      </>
 
   )
 }

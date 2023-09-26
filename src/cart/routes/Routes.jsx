@@ -1,7 +1,7 @@
 import { Navigate, Route, Routes } from "react-router-dom"
 import { Cart } from "../pages/Cart"
 import { Checkout } from "../pages/Checkout"
-import { Payment } from "../pages/Payment"
+import { Confirmation } from "../pages/Confirmation"
 import { Breadcrumb } from "../components/Breadcrumbs"
 import { useCart } from "../../context/CartContext"
 
@@ -17,7 +17,7 @@ export const CartRoutes = () => {
             <Routes>
                 <Route path = "" element = {<Cart/>}/>
                 <Route path = "/checkout" element = { <Checkout/> }/>
-                <Route path = "/payment" element = { <Payment/> }/>
+                <Route path = "/confirmation" element = { <Confirmation/> }/>
                 <Route path = "/*" element = { <Navigate to = "/"/> } />
 
             </Routes>

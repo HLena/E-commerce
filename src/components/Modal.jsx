@@ -2,7 +2,6 @@ import Modal from 'react-bootstrap/Modal';
 
 export const ModalLy = ({show, handleClose, children, form}) => {
 
-
   return (
       <Modal show={show} onHide={handleClose} >
         <Modal.Header closeButton>

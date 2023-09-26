@@ -1,6 +1,5 @@
-import { Button } from "react-bootstrap"
 import { useCart } from "../context/CartContext"
-import { CartIcon } from "./Icons";
+import { CustomIcon } from "./Icons";
 import { useNavigate } from "react-router-dom";
 
 export const CartWidget = () => {
@@ -16,7 +15,7 @@ export const CartWidget = () => {
             onClick={goToCart}
             className="position-relative"
         >
-            <CartIcon/>
+            <CustomIcon name = "cart"/>
             {
                 quantityItems > 0 && 
                     <div

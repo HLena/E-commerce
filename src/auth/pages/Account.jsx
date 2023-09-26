@@ -4,7 +4,6 @@ import Tabs from 'react-bootstrap/Tabs';
 import { useAuth } from '../../context/AuthContext';
 import { useEffect, useState } from 'react';
 import { getOrderList } from '../../firebase/orders';
-import { getFavoriteList } from '../../firebase/favorites';
 import { OrderList } from '../components/OrderList';
 import { CustomIcon } from '../../components/Icons';
 import { getProductById } from '../../firebase/products';

@@ -1,8 +1,7 @@
-import { Col, Container, Row, Spinner } from "react-bootstrap";
+import { Col, Row } from "react-bootstrap";
 import { useParams } from "react-router-dom";
-import { Item } from "../components/Item";
 import {useFirestore} from "../hooks/useFirestore";
-import { getProductsByCategory } from "../firebase/getData";
+import { getProductsByCategory } from "../firebase/products";
 import { Loading } from "../components/Loading";
 import { ItemList } from "../components/ItemList";
 
@@ -15,13 +14,11 @@ export const Home = () => {
     if(isLoading) return <Loading/>
 
     return (
-      <Container> 
         <Col>
           <Row>
-            <h4 className='text-center text-uppercase my-5'>{ (!categoryId) ? 'All products' : categoryId  }</h4>
+            <h4 className='text-uppercase my-5 text-center'>{ (!categoryId) ? 'Todos los productos' : categoryId  }</h4>
           </Row>
           <ItemList products={data} />
         </Col>
-      </Container>
     )
 }

@@ -1,13 +1,18 @@
 import { Formik, Form, Field, ErrorMessage } from 'formik';
-import { Button, FormGroup, FormControl, FormLabel } from 'react-bootstrap';
+import {  FormGroup, FormControl, FormLabel } from 'react-bootstrap';
 import * as yup from 'yup';
 import { validateEmail, confirmEmail } from '../../utils/validations';
+import { useAuth } from '../../context/AuthContext';
 
 
 export const CheckoutForm = ({
   generateOrder
 }) => {
 
+  const { user } = useAuth();
+
+  const userEmail = user?.providerData[0].email;
+  
 
   const schema = yup.object().shape({
     firstName: yup.string().required("Sus nombres son requeridos"),
@@ -20,7 +25,7 @@ export const CheckoutForm = ({
   
 
   return (
-    <div className="item-container__wrapper">
+    <div className="checkout-form-container bg-white p-3 rounded-4 shadow-sm">
       <h4>Contacto</h4>
       <Formik
         validationSchema={schema}
@@ -30,8 +35,8 @@ export const CheckoutForm = ({
         initialValues={{
           firstName: '',
           lastName: '',
-          email: '',
-          confirmEmail: '',
+          email: userEmail ||'',
+          confirmEmail:userEmail || '',
           phone: '',
         }}
       >
@@ -76,6 +81,7 @@ export const CheckoutForm = ({
                 <Field
                   type="text"
                   name="email"
+                  disabled = {userEmail ? true : false}
                   value={values.email}
                   onChange={handleChange}
                   validate = {() =>validateEmail(values.email)}
@@ -89,25 +95,28 @@ export const CheckoutForm = ({
                   className='text-danger'
                   />
               </FormGroup>
-              <FormGroup className="mb-3">
-                <FormLabel>Confirmar Correo</FormLabel>
-                <Field
-                  type="text"
-                  name="confirmEmail"
-                  value={values.confirmEmail}
-                  validate={() => confirmEmail(values)}
-                  as={FormControl}
-                  onChange={handleChange}
-                  isValid={touched.confirmEmail && !errors.confirmEmail}
-                  isInvalid={!!errors.confirmEmail}
-                />
+              {
+                !userEmail &&
+                  <FormGroup className="mb-3">
+                    <FormLabel>Confirmar Correo</FormLabel>
+                    <Field
+                      type="text"
+                      name="confirmEmail"
+                      value={values.confirmEmail}
+                      validate={() => confirmEmail(values)}
+                      as={FormControl}
+                      onChange={handleChange}
+                      isValid={touched.confirmEmail && !errors.confirmEmail}
+                      isInvalid={!!errors.confirmEmail}
+                    />
 
-                <ErrorMessage
-                  name='confirmEmail'
-                  component="div"
-                  className='text-danger'
-                  />
-              </FormGroup>
+                    <ErrorMessage
+                      name='confirmEmail'
+                      component="div"
+                      className='text-danger'
+                      />
+                  </FormGroup>
+              }
               <FormGroup className="mb-3">
                 <FormLabel>Teléfono</FormLabel>
                 <Field
@@ -125,7 +134,8 @@ export const CheckoutForm = ({
                   className='text-danger'
                   />
               </FormGroup>
-              <Button type="submit">Continuar con el Pago</Button>
+              <button type="submit" className='bt main-btn'>Realizar pedido
+              </button>
           </Form>
         )}
       </Formik>
