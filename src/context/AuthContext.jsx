@@ -2,8 +2,7 @@ import {
     GoogleAuthProvider, createUserWithEmailAndPassword, onAuthStateChanged, 
     signInWithEmailAndPassword, 
     signInWithPopup, 
-    signOut, 
-    updateCurrentUser, 
+    signOut,
     updateProfile
 } from "firebase/auth";
 import { 
@@ -12,10 +11,11 @@ import {
     useEffect, 
     useState 
 } from "react";
-import { auth } from "../firebase/firebase";
+import { auth, db } from "../firebase/firebase";
 import { ModalLy } from "../components/Modal";
 import { Login } from "../auth/pages/Login";
 import { Register } from "../auth/pages/Register";
+import { collection, onSnapshot, query, where } from "firebase/firestore";
 
 
 // Crea el contexto de autenticación
@@ -29,6 +29,7 @@ export const AuthProvider = ({children}) => {
     const [isLoading, setIsLoading] = useState(true);
     const [isOpen, setIsOpen] = useState(false);
     const [form, setForm] = useState('login');
+    const [favorites, setFavorites] = useState([]);
 
     const closeModal = () => setIsOpen(false);
     const openModal = () => setIsOpen(true);
@@ -46,6 +47,29 @@ export const AuthProvider = ({children}) => {
 
         return () => unsubscribe();
     }, []);
+
+    useEffect(() => {
+      
+      if(user) {
+        console.log('onSnapshot');
+        const documents = query(collection(db, 'favorites'), where ("userId", "==", user.uid))
+        
+        const unsubscribe = onSnapshot(documents, (querySnapshot) => {
+            const wishList = [];
+            querySnapshot.forEach((doc) => {
+                wishList.push({
+                    ...doc.data(),
+                    id: doc.id
+                });
+            });
+            setFavorites(wishList);
+        });
+       
+        return () => unsubscribe();
+
+      }
+    }, [user])
+    
 
     const registerUser = async({email, password, firstName, lastName}) => {
 
@@ -115,12 +139,15 @@ export const AuthProvider = ({children}) => {
             signOff,
             closeModal,
             openModal,
-            setForm
+            setForm,
+            favorites
         }}>
             { !isLoading && children }
+
             <ModalLy 
                 handleClose={closeModal} 
                 show={isOpen}
+                form = {form}
             >
                 { 
                     form == 'login'
