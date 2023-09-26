@@ -1,5 +1,5 @@
 import { Formik, Form, Field, ErrorMessage } from 'formik';
-import { Button, FormGroup, FormControl, FormLabel } from 'react-bootstrap';
+import { FormGroup, FormControl, FormLabel } from 'react-bootstrap';
 import * as yup from 'yup';
 import { useAuth } from '../../context/AuthContext';
 
@@ -22,7 +22,6 @@ export const Login = () => {
 
   return (
     <div>
-      <h4>Acceso</h4>
       <Formik
         validationSchema={schema}
         onSubmit={(values) => {
@@ -71,13 +70,13 @@ export const Login = () => {
                   />
               </FormGroup>
               <FormGroup className="mb-2">
-                <span>¿Aún no tienes una cuenta? 
+                <span>¿Aún no tienes una cuenta?  
                   <a href='#' onClick={() => setForm('register')}>
-                    Registrate aquí
+                     Crear cuenta
                   </a>
                 </span>
               </FormGroup>
-              <Button type="submit">Iniciar Sesión</Button>
+              <button type="submit" className='bt main-btn'>Iniciar Sesión</button>
           </Form>
         )}
       </Formik>
