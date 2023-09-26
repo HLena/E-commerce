@@ -1,0 +1,4 @@
+.ul-options li:hover{
+    background: whitesmoke;
+    color: var(--mi-color);
+}

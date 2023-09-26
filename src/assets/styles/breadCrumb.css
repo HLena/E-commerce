@@ -5,14 +5,14 @@
     margin:1rem;
     padding: 0;
 }
-.breadcrumb-list__item{
+.breadcrumb-li{
     display: inline;
 }
 .breadcrumb-link{
     text-decoration: none;
 }
 .bc-active{
-    color: #0C5ED7;
+    color: var(--mi-color)
 }
 .bc-inactive{
     color: darkgray;

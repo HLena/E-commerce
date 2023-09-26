@@ -1,0 +1,61 @@
+.container .title{
+    font-size: 3.5rem;
+    color:#444;
+    margin-bottom: 3rem;
+    text-transform: uppercase;
+    text-align: center;
+ }
+
+ .container .products-container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+    gap:1rem;
+ }
+
+ .container .products-container .product{
+   position: relative;
+ }
+
+ .container .products-container .product:hover img{
+   transform: scale(1.2);
+}
+
+.container .products-container .product .discount-product{
+   background:var(--mi-color);
+   padding: .3rem .5rem;
+   font-size: 12px;
+   color: white;
+   font-weight: bold;
+   width: fit-content;
+   border-radius: 15px;
+}
+.product .price-container{
+   font-weight: bold;
+   margin-bottom: .5rem;
+}
+
+.product .price-container .price-product{
+   color: var(--mi-color);
+   margin-right: .5rem;
+}
+
+.product .price-container .price-discount{
+   color: #8C94A7;
+   text-decoration: line-through;
+}
+
+.btn-favorite{
+   background: white;
+   color: var(--mi-color);
+   border: none;
+   padding: .5rem;
+   border-radius: 1rem;
+   height: 100%;
+   width: 2.5rem;
+   height: 2.5rem;
+}
+ 
+.btn-favorite:hover{
+   background: whitesmoke;
+}
+ 
